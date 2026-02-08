@@ -1,10 +1,8 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return jsonify({"status": "backend alive"})
+CORS(app)
 
 @app.route("/ping")
 def ping():
